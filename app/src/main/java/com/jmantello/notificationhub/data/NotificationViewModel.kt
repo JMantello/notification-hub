@@ -8,7 +8,6 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 
-
 class NotificationViewModel(private val notificationRepository: NotificationRepository) : ViewModel() {
 
     // Expose Flow to the UI
