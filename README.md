@@ -1,3 +1,3 @@
 # Notification Hub
 
-A place to store, manage, and act upon notification items from multiple applications.
+A place to store, manage, and carry out notification items from multiple applications.
