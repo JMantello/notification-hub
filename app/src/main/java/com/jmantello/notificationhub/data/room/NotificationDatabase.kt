@@ -1,4 +1,4 @@
-package com.jmantello.notificationhub.data
+package com.jmantello.notificationhub.data.room
 
 import android.content.Context
 import androidx.room.Database

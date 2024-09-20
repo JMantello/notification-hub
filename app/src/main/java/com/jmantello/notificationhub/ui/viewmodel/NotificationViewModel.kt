@@ -1,15 +1,22 @@
-package com.jmantello.notificationhub.data
+package com.jmantello.notificationhub.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.jmantello.notificationhub.data.NotificationRepository
+import com.jmantello.notificationhub.data.room.NotificationEntity
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import java.util.Date
+import javax.inject.Inject
 
-class NotificationViewModel(private val notificationRepository: NotificationRepository) : ViewModel() {
+@HiltViewModel
+class NotificationViewModel @Inject constructor(
+    private val notificationRepository: NotificationRepository
+) : ViewModel() {
 
     // Expose Flow to the UI
     val notifications: Flow<List<NotificationEntity>> = flow {

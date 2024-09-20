@@ -1,4 +1,4 @@
-package com.jmantello.notificationhub.adapters
+package com.jmantello.notificationhub.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.jmantello.notificationhub.R
-import com.jmantello.notificationhub.data.NotificationEntity
+import com.jmantello.notificationhub.data.room.NotificationEntity
 
 class NotificationAdapter :
     ListAdapter<NotificationEntity, NotificationAdapter.NotificationViewHolder>(DiffCallback()) {
