@@ -2,15 +2,22 @@ package com.jmantello.notificationhub.ui.listeners
 
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
+import com.jmantello.notificationhub.data.NotificationRepository
 import com.jmantello.notificationhub.data.room.NotificationDatabase
 import com.jmantello.notificationhub.data.room.NotificationEntity
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import java.util.Date
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class NotificationListener : NotificationListenerService() {
+
+    @Inject lateinit var notificationRepository: NotificationRepository
+
     private val serviceJob = Job()
     private val serviceScope = CoroutineScope(Dispatchers.IO + serviceJob)
 
@@ -28,8 +35,7 @@ class NotificationListener : NotificationListenerService() {
         )
 
         serviceScope.launch {
-            NotificationDatabase.getInstance(applicationContext).notificationDao()
-                .insert(notificationEntity)
+            notificationRepository.insert(notificationEntity)
         }
     }
 
