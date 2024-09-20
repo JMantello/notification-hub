@@ -11,7 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jmantello.notificationhub.R
 import com.jmantello.notificationhub.adapters.NotificationAdapter
+import com.jmantello.notificationhub.data.NotificationDao
+import com.jmantello.notificationhub.data.NotificationDatabase
+import com.jmantello.notificationhub.data.NotificationRepository
 import com.jmantello.notificationhub.data.NotificationViewModel
+import com.jmantello.notificationhub.data.NotificationViewModelFactory
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -31,7 +35,13 @@ class NotificationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(requireActivity())[NotificationViewModel::class.java]
+        // Initialize items
+        val dao = NotificationDatabase.getInstance(requireContext()).notificationDao()
+        val repository = NotificationRepository(dao)
+        val factory = NotificationViewModelFactory(repository)
+
+        viewModel = ViewModelProvider(this, factory)[NotificationViewModel::class.java]
+
         recyclerView = view.findViewById(R.id.recyclerView)
         adapter = NotificationAdapter()
 

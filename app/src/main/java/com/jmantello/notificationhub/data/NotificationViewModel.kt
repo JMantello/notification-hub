@@ -16,13 +16,17 @@ class NotificationViewModel(private val notificationRepository: NotificationRepo
         emit(notificationRepository.getAllNotifications())
     }.flowOn(Dispatchers.IO) // Ensure the Flow runs on a background thread
 
-    suspend fun mockNotificationsIfEmpty() {
+    init {
+        viewModelScope.launch { mockNotificationsIfEmpty() }
+    }
+
+    private suspend fun mockNotificationsIfEmpty() {
         val currentNotifications = notificationRepository.getAllNotifications()
         if (currentNotifications.isEmpty()) {
             val mockNotifications = listOf(
-                NotificationEntity(1, title = "Mock title", text = "Mock text", createdAt = Date()),
-                NotificationEntity(2, title = "Mock title", text = "Mock text", createdAt = Date()),
-                NotificationEntity(3, title = "Mock title", text = "Mock text", createdAt = Date()),
+                NotificationEntity(1, title = "Mock title", text = "Mock text", createdAt = Date().toString()),
+                NotificationEntity(2, title = "Mock title", text = "Mock text", createdAt = Date().toString()),
+                NotificationEntity(3, title = "Mock title", text = "Mock text", createdAt = Date().toString()),
             )
             mockNotifications.forEach { notificationRepository.insert(it) }
         }

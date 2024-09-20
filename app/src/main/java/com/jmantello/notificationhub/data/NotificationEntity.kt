@@ -9,5 +9,5 @@ data class NotificationEntity(
     @PrimaryKey(autoGenerate = true) val id: Int,
     val title: String,
     val text: String,
-    val createdAt: Date
+    val createdAt: String
 )
