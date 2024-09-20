@@ -1,5 +1,7 @@
 package com.jmantello.notificationhub.data
 
+import com.jmantello.notificationhub.data.room.NotificationDao
+import com.jmantello.notificationhub.data.room.NotificationEntity
 import javax.inject.Inject
 
 class NotificationRepository @Inject constructor(

@@ -1,9 +1,9 @@
-package com.jmantello.notificationhub.listeners
+package com.jmantello.notificationhub.ui.listeners
 
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
-import com.jmantello.notificationhub.data.NotificationDatabase
-import com.jmantello.notificationhub.data.NotificationEntity
+import com.jmantello.notificationhub.data.room.NotificationDatabase
+import com.jmantello.notificationhub.data.room.NotificationEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

@@ -5,9 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.room.Room
-import com.jmantello.notificationhub.data.NotificationDatabase
-import com.jmantello.notificationhub.fragments.NotificationFragment
+import com.jmantello.notificationhub.ui.fragments.NotificationFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

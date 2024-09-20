@@ -1,4 +1,4 @@
-package com.jmantello.notificationhub.fragments
+package com.jmantello.notificationhub.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,8 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jmantello.notificationhub.R
-import com.jmantello.notificationhub.adapters.NotificationAdapter
-import com.jmantello.notificationhub.data.NotificationViewModel
+import com.jmantello.notificationhub.ui.adapters.NotificationAdapter
+import com.jmantello.notificationhub.ui.viewmodel.NotificationViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

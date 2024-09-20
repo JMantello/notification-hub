@@ -1,7 +1,9 @@
-package com.jmantello.notificationhub.data
+package com.jmantello.notificationhub.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.jmantello.notificationhub.data.NotificationRepository
+import com.jmantello.notificationhub.data.room.NotificationEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

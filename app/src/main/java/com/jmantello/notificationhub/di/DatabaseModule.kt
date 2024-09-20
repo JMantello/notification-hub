@@ -2,8 +2,8 @@ package com.jmantello.notificationhub.di
 
 import android.content.Context
 import androidx.room.Room
-import com.jmantello.notificationhub.data.NotificationDao
-import com.jmantello.notificationhub.data.NotificationDatabase
+import com.jmantello.notificationhub.data.room.NotificationDao
+import com.jmantello.notificationhub.data.room.NotificationDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
