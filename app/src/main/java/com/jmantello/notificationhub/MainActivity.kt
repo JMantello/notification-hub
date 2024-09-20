@@ -8,7 +8,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.room.Room
 import com.jmantello.notificationhub.data.NotificationDatabase
 import com.jmantello.notificationhub.fragments.NotificationFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
